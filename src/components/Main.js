@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Score from "./Score/Score";
 import Card from "./Card";
+import "../styles/Main.css";
 
 const Main = () => {
   const initialState = [

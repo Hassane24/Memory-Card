@@ -1,0 +1,19 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(239, 14, 61);
+  width: 100%;
+}
+
+.header > img {
+  width: 30%;
+  height: 100%;
+  object-fit: contain;
+}
