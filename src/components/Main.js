@@ -3,9 +3,7 @@ import Score from "./Score/Score";
 import Card from "./Card";
 
 const Main = () => {
-  const [bestScore, setBestScore] = useState(0);
-  const [currentScore, setcurrentScore] = useState(0);
-  const [chars, setChars] = useState([
+  const initialState = [
     { name: "Killua", id: 0, clicked: false },
     { name: "Gon", id: 1, clicked: false },
     { name: "Kurapika", id: 2, clicked: false },
@@ -18,33 +16,61 @@ const Main = () => {
     { name: "Illumi", id: 9, clicked: false },
     { name: "Uvo", id: 10, clicked: false },
     { name: "Shalnark", id: 11, clicked: false },
-  ]);
+  ];
+  const [bestScore, setBestScore] = useState(0);
+  const [currentScore, setcurrentScore] = useState(0);
+  const [chars, setChars] = useState(initialState);
 
   useEffect(() => {
-    setChars((prevState) => {
-      const newState = [...prevState];
-      for (var i = newState.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = newState[i];
-        newState[i] = newState[j];
-        newState[j] = temp;
-      }
-      return newState;
-    });
+    setChars((prevState) => shuffleArrayItems(prevState));
   }, [currentScore]);
 
-  const cardClickHandler = () => {
-    setcurrentScore(currentScore + 1);
-    setChars((prevState) => {
-      const newState = [...prevState];
-      for (var i = newState.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = newState[i];
-        newState[i] = newState[j];
-        newState[j] = temp;
+  const cardClickHandler = (e) => {
+    if (e.target.innerText === "") {
+      const charName = e.target.alt;
+      if (chars.find((char) => char.name === charName).clicked) {
+        setChars(initialState);
+        setcurrentScore(0);
+        return;
       }
-      return newState;
-    });
+    } else {
+      const charName = e.target.innerText;
+      if (chars.find((char) => char.name === charName).clicked) {
+        setChars(initialState);
+        setcurrentScore(0);
+        return;
+      }
+    }
+
+    if (e.target.innerText === "") {
+      const charName = e.target.alt;
+      setChars((prevState) => {
+        const newState = [...prevState];
+        newState.find((char) => char.name === charName).clicked = true;
+        return newState;
+      });
+    } else {
+      const charName = e.target.innerText;
+      setChars((prevState) => {
+        const newState = [...prevState];
+        newState.find((char) => char.name === charName).clicked = true;
+        return newState;
+      });
+    }
+
+    setcurrentScore(currentScore + 1);
+    if (currentScore >= bestScore) setBestScore(currentScore + 1);
+  };
+
+  const shuffleArrayItems = (array) => {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      let temp = newArray[i];
+      newArray[i] = newArray[j];
+      newArray[j] = temp;
+    }
+    return newArray;
   };
 
   return (
