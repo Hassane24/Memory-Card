@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Memory-Card/static/css/main.635a2c81.css",
+    "main.js": "/Memory-Card/static/js/main.921fb969.js",
+    "static/media/Kurapika.jpeg": "/Memory-Card/static/media/Kurapika.26c033f9fb4b308433fa.jpeg",
+    "static/media/HXH-logo.png": "/Memory-Card/static/media/HXH-logo.b095725ec4fab5189f49.png",
+    "static/media/Hisoka.jpeg": "/Memory-Card/static/media/Hisoka.1e1b165491481fdaf1de.jpeg",
+    "static/media/Killua.jpeg": "/Memory-Card/static/media/Killua.c4a861c397b62350876c.jpeg",
+    "static/media/Shalnark.jpeg": "/Memory-Card/static/media/Shalnark.f3ce6ed2f9eb4ea490f1.jpeg",
+    "static/media/Gon.jpeg": "/Memory-Card/static/media/Gon.293cc1c74c8e4f81eee6.jpeg",
+    "static/media/Netero.jpeg": "/Memory-Card/static/media/Netero.a08702101d006aa577b0.jpeg",
+    "static/media/github.svg": "/Memory-Card/static/media/github.4cd3a2bc790226c346ae943ec1622139.svg",
+    "index.html": "/Memory-Card/index.html",
+    "main.635a2c81.css.map": "/Memory-Card/static/css/main.635a2c81.css.map",
+    "main.921fb969.js.map": "/Memory-Card/static/js/main.921fb969.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.635a2c81.css",
+    "static/js/main.921fb969.js"
+  ]
+}
