@@ -1,3 +1,4 @@
+import "../styles/Card.css";
 const Card = (props) => {
   return (
     <div className="card" onClick={props.clickEvent}>

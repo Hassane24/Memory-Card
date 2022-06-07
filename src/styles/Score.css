@@ -1,0 +1,30 @@
+.score {
+  gap: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  width: 100%;
+}
+
+.best-score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(171 204 18);
+  padding: 0.5rem;
+  width: 25%;
+  border-radius: 1rem;
+}
+
+.current-score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 25%;
+  background-color: rgb(192, 33, 24);
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
